@@ -1,30 +1,33 @@
 <?php
 function ss_include_slick_carousel() {
 
-// Image (with crop) repeater field
-// That is nested in a flexible content layout (start above)
-// And then outputs to a Slick carousel slider
+// Image repeater field outputs to a Slick carousel slider
 
-	if( have_rows('slick_carousel_slider') ): // repeater field: Flex Carousel Repeater
+	if( have_rows('slick_carousel_slider') ): // repeater field: Slick Carousel Repeater
 		
-		echo '<section class="wrap carousel-slider">'; // section wrapper
-			echo '<div id="slider" class="carousel responsive-carousel">'; // slider wrapper which might be redundant 
+		echo '<div class="wrap carousel-slider">';
+			
+			echo '<div id="slider" class="carousel responsive-carousel">';
 
-			while ( have_rows('slick_carousel_slider') ) : the_row(); // begin the loop through the repeater field. so far this has only been outputting one image
+				while ( have_rows('slick_carousel_slider') ) : the_row(); // loop through the repeater field
+					
+					$image = get_sub_field('image'); // get image from repeater
+					
+					?>
 				
-				$image = get_sub_field('image'); // get image from repeater
+					<div>
+					
+						<a rel="lightbox" class="fancybox-ss" href="<?php echo $image['url']; ?>"><img data-lazy="<?php echo $image['url']; ?>" alt="" /></a>
+						
+					</div>
 				
-				?>
+				<?php
+				
+				endwhile; // end loop
 			
-				<div>
-					<a rel="lightbox" class="fancybox-ss" href="<?php echo $image['url']; ?>"><img data-lazy="<?php echo $image['url']; ?>" alt="" /></a>
-				</div> <?php // need to add alt and title ?>
+			echo '</div>';
 			
-			<?php
-			// end loop
-			endwhile;
-			
-		echo '</div></section> <!-- carousel-slider -->';
+		echo '</div>';
 
 	endif;
 // End Carousel repeater
