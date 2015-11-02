@@ -1,7 +1,5 @@
-<?php
+<?php // Repeater field outputs images to a Slick carousel slider
 function ss_include_slick_carousel() {
-
-// Image repeater field outputs to a Slick carousel slider
 
 	if( have_rows('slick_carousel_slider') ): // repeater field: Slick Carousel Repeater
 		
@@ -17,7 +15,7 @@ function ss_include_slick_carousel() {
 				
 					<div>
 					
-						<a rel="lightbox" class="fancybox-ss" href="<?php echo $image['url']; ?>"><img data-lazy="<?php echo $image['url']; ?>" alt="" /></a>
+						<a rel="lightbox" class="fancybox-ss" href="<?php echo $image['url']; ?>"><img src="<?php echo $image['url']; ?>" alt="" /></a>
 						
 					</div>
 				
