@@ -36,8 +36,8 @@ function ss_enqueue_scripts() {
 	wp_enqueue_script( 'slick-init', plugins_url('/js/slick/slick-init.js', __FILE__ ), array( 'jquery' ), '', true );
 	wp_enqueue_style( 'fancybox-styles', plugins_url('/css/jquery.fancybox-1.3.4.css', __FILE__ ), array() );
 	wp_enqueue_script( 'fancybox', plugins_url('/js/jquery.fancybox-1.3.4.pack.js', __FILE__ ), array( 'jquery' ), '', true );	
-	wp_enqueue_script( 'fancybox', plugins_url('/js/jquery.easing-1.3.pack.js', __FILE__ ), array( 'jquery' ), '', true );	
-	wp_enqueue_script( 'fancybox', plugins_url('/js/jquery.mousewheel-3.0.4.pack.js', __FILE__ ), array( 'jquery' ), '', true );
+	wp_enqueue_script( 'fancybox-easing', plugins_url('/js/jquery.easing-1.3.pack.js', __FILE__ ), array( 'jquery' ), '', true );	
+	wp_enqueue_script( 'fancybox-mousewheel', plugins_url('/js/jquery.mousewheel-3.0.4.pack.js', __FILE__ ), array( 'jquery' ), '', true );
 	wp_enqueue_script( 'fancybox-init',  plugins_url('/js/fancybox-init.js', __FILE__ ), array( 'fancybox' ), '1.0.0', true );
 }
 
