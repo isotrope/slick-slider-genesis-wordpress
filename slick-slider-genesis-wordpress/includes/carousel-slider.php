@@ -10,16 +10,12 @@ function ss_include_slick_carousel() {
 				while ( have_rows('slick_carousel_slider') ) : the_row(); // loop through the repeater field
 					
 					$image = get_sub_field('image'); // get image from repeater
-					
-					?>
 				
-					<div>
+					echo '<div>';
 					
-						<a rel="lightbox" class="fancybox-ss" href="<?php echo $image['url']; ?>"><img src="<?php echo $image['url']; ?>" alt="" /></a>
+						echo '<a rel="lightbox" class="fancybox-ss" href="'; echo $image['url']; echo'"><img src="'; echo $image['url']; echo'" alt="" /></a>';
 						
-					</div>
-				
-				<?php
+					echo'</div>';
 				
 				endwhile; // end loop
 			
