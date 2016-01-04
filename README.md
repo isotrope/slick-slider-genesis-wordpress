@@ -6,3 +6,5 @@
 4. Create a page and add images to custom fields
 
 Example: http://www.comowebsites.net/sandbox
+
+<img src="https://media.giphy.com/media/ArAgo5dU2z2xO/giphy.gif" alt="Awesome Cat GIF" />
